@@ -1,0 +1,45 @@
+
+
+***  Directivo  ***
+
+***  Empleado de Planta  ***
+
+Nombre: Tony
+Apellido: Stark
+Antiguedad: 5
+Con puesto: Director general Stark Inc
+Pago semanal: 12500.0
+Sueldo integrado: 38500.0
+Prestaciones: Vales despensa, Afore, Vacaciones Verano, Seguro de auto,
+Con bono extra de: 5000.0
+
+
+***  Secretaria  ***
+
+***  Empleado de Planta  ***
+
+Nombre: Roz
+Apellido: Ronney
+Antiguedad: 10
+Con puesto: Secretaria ejecutiva
+Pago semanal: 6200.0
+Sueldo integrado: 22010.0
+Prestaciones: Afore, Infonavit, Vacaciones Verano, Descuento proveedores afiliados,
+Sueldo integrado: 22010.0
+
+
+** POLIMORFISMO CON PLANTA **
+
+Tony Stark Administra los recursos de su departamento Define los aumentos de sue
+ldo de sus empleados Reporta los logros de su departamento
+
+Roz Ronney llena los registros de los empleados del departamento
+
+
+** POLIMORFISMO CON ADMINISTRATIVO **
+
+Tony Stark Administra los recursos de su departamento Define los aumentos de sue
+ldo de sus empleados Reporta los logros de su departamento
+
+
+
