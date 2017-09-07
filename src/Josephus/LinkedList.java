@@ -43,8 +43,8 @@ public class LinkedList<E> implements List<E> {
 			for(int x=0; x<pasos; x++ ) {
 				verdugo = verdugo.next;
 				
-				// La siguiente condición nos permite pasar por null sin afectar el conteo
-				if(verdugo.value==null) {
+				// La siguiente condició n nos permite pasar por null sin afectar el conteo
+				if(verdugo==header) {
 					verdugo=verdugo.next;
 					bandera=1;
 					

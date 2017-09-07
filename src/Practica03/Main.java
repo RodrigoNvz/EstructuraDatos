@@ -2,7 +2,28 @@ package Practica03;
 
 public class Main {
 
+	public static boolean isPalindrome(String word) {
+		LinkedList<Character> letters = new LinkedList<Character>();
+		for(int i=0; i<word.length(); i++) {
+			char letter = word.charAt(i);
+			if(Character.isLetter(letter))
+			
+				letters.addLast(Character.toLowerCase(letter));
+		}
+		while (letters.size()>1) {
+			if(!letters.getFirst().equals(letters.getLast())) {
+				return false;
+			}
+			letters.removeFirst();
+			letters.removeLast();
+		}
+		
+		return true;
+	}
 	public static void main(String[] args) {
+		System.out.println(isPalindrome("Anita lava la tina"));
+		
+		
 		System.out.println("** TEST CIRCULAR DOUBLY-LINKEDLIST CLASS **");
 		System.out.println("\t** USING INTEGERS **");
 		LinkedList<Integer> iList = new LinkedList<Integer>();
