@@ -54,6 +54,22 @@ public class Main {
 		}
 
 	}
+	
+	public static void selectionSort(int values[]) {
+	    for (int i = 0; i < values.length - 1; i++ ) {
+	      int min = values[i];
+	      int tempMin = i;
+	      for (int j = i + 1; j < values.length; j++) {
+	        if (min > values[j]) {
+	          min = values[j];
+	          tempMin = j;
+	        }
+	      }
+	      values[tempMin] = values[i];
+	      values[i] = min;
+	    }
+	  }
+	
 	public static String toString(int[] vals) {
 		String strg="(";
 		for (int x=0;x<vals.length-1;x++) {
@@ -75,6 +91,7 @@ public class Main {
 		System.out.println(binarySearch(iArray,34));
 		System.out.println("Binary search para target 777: ");
 		System.out.println(binarySearch(iArray,777));
+		
 		String answer;
 		System.out.println("\nArray original:");
 		answer=toString(iArray);
@@ -82,6 +99,16 @@ public class Main {
 		System.out.println("Array después de insertionSort:");
 		insertionSort(iArray);
 		answer=toString(iArray);
+		System.out.println(answer);
+		
+		int[] iArray2 = {34,56,89,123,43,98,790};
+		
+		System.out.println("\nArray original:");
+		answer=toString(iArray2);
+		System.out.println(answer);
+		System.out.println("Array después de selectionSort:");
+		selectionSort(iArray2);
+		answer=toString(iArray2);
 		System.out.println(answer);
 	}
 	
