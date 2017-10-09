@@ -1,7 +1,5 @@
 package Search;
 
-import javax.xml.crypto.Data;
-
 public class Main {
 	
 	public static int linearSearch(int values[], int target) {
@@ -68,6 +66,23 @@ public class Main {
 	      values[tempMin] = values[i];
 	      values[i] = min;
 	    }
+	 }
+	
+	public static void bubbleSort(int values[]) {
+	   
+	    int uCiclo = values.length-1;
+	    while (uCiclo > 0) {
+	      int iCiclo = -1;
+	      for (int i = 0; i < uCiclo; i++) {
+		    int temp = values[i];
+	        if (values[i] > values[i+1]) {
+	        	values[i] = values[i+1];
+	        	values[i+1] = temp;
+	          iCiclo = i;
+	        }
+	      }
+	      uCiclo = iCiclo;
+	    }
 	  }
 	
 	public static String toString(int[] vals) {
@@ -109,6 +124,16 @@ public class Main {
 		System.out.println("Array después de selectionSort:");
 		selectionSort(iArray2);
 		answer=toString(iArray2);
+		System.out.println(answer);
+		
+		int[] iArray3 = {23,545,875,32,547,213,457,89,21,1,1,0,6,5};
+		
+		System.out.println("\nArray original:");
+		answer=toString(iArray3);
+		System.out.println(answer);
+		System.out.println("Array después de bubbleSort:");
+		bubbleSort(iArray3);
+		answer=toString(iArray3);
 		System.out.println(answer);
 	}
 	
