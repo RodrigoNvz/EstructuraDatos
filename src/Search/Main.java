@@ -1,5 +1,7 @@
 package Search;
 
+import java.util.Arrays;
+
 public class Main {
 	
 	public static int linearSearch(int values[], int target) {
@@ -93,6 +95,59 @@ public class Main {
 		strg+=vals[vals.length-1]+")";
 		return strg;
 	}
+	
+
+    public static void removeTopItem(int arr[], int arrayLength, int index){
+    	int child1 = 2*index + 1;  
+        int child2 = 2*index + 2; 
+        
+        int largest = index;
+        
+        if (child1 < arrayLength && arr[child1] > arr[largest])
+            largest = child1;
+        if (child2 < arrayLength && arr[child2] > arr[largest])
+            largest = child2;
+        if (largest != index)
+        {
+            int swap = arr[index];
+            arr[index] = arr[largest];
+            arr[largest] = swap;
+            removeTopItem(arr, arrayLength, largest);
+        }
+    }
+
+    public static void heapSort(int[] values) 
+    {
+    	for (int i =  values.length/ 2 - 1; i >= 0; i--){
+    		removeTopItem(values, values.length, i);
+        }
+        for (int i = values.length - 1; i>=0; i--)
+        {
+        	int temp = values[0];
+        	values[0] = values[i];
+        	values[i] = temp;
+        	removeTopItem(values, i, 0);
+        }
+    }
+	
+
+    public static void makeHeap(int[] values){
+
+        for(int i=0;i<values.length;i++){
+            int index =i;
+            while(index!=0){
+                int parent =(index-1)/2;
+                if(values[index]<=values[parent]) {
+                    break;
+                }
+                int temp = values[index];
+                values[index]=values[parent];
+                values[parent]=temp;
+                index=parent;
+            }
+        }
+    }
+
 
 	
 	public static void main(String[] args) {
@@ -135,8 +190,17 @@ public class Main {
 		bubbleSort(iArray3);
 		answer=toString(iArray3);
 		System.out.println(answer);
+		
+		int[] iArray4 = {23,545,875,32,547,213,457,89,21,1,1,0,6,5};
+		System.out.println("\nArray original:");
+		System.out.println(Arrays.toString(iArray4));
+		System.out.println("\nArray después de makeHeap:");
+		makeHeap(iArray4);
+		System.out.println(Arrays.toString(iArray4));
+		System.out.println("\nHeapSort:");
+		heapSort(iArray4);
+		System.out.println(Arrays.toString(iArray4));
 	}
-	
 
 }
 
