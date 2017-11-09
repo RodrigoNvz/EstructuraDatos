@@ -1,5 +1,8 @@
-package Practica07;
+package Examen03;
 import java.util.NoSuchElementException;
+
+import Practica07.List;
+import Practica07.Node;
 
 public class LinkedList<E> implements List<E> {
 	private Node<E> header;
