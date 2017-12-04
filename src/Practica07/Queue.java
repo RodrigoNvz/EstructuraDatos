@@ -1,6 +1,8 @@
 package Practica07;
 import java.util.NoSuchElementException;
 
+import Examen03.LinkedList;
+
 public class Queue<E> implements IQueue<E> {
 	private LinkedList<E> queue;
 	

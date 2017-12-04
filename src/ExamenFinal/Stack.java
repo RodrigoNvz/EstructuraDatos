@@ -1,7 +1,5 @@
-package Practica07;
+package ExamenFinal;
 import java.util.EmptyStackException;
-
-import Examen03.LinkedList;
 
 public class Stack<E> implements IStack<E> {
 	private LinkedList<E> stack;

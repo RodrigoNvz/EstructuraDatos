@@ -88,12 +88,9 @@ public class Main {
 					list3.addFirst(element);
 				}
 			}
-		}
-		
+		}	
 		return list3;
-		
 	}
-		
 	
 	public static void main(String[] args) {
 		System.out.println(allStar("HELLO"));

@@ -69,7 +69,7 @@ public class Main {
 	      values[i] = min;
 	    }
 	 }
-	
+
 	public static void bubbleSort(int values[]) {
 	   
 	    int uCiclo = values.length-1;
@@ -95,7 +95,6 @@ public class Main {
 		strg+=vals[vals.length-1]+")";
 		return strg;
 	}
-	
 
     public static void removeTopItem(int arr[], int arrayLength, int index){
     	int child1 = 2*index + 1;  
