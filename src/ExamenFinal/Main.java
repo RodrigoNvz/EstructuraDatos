@@ -78,6 +78,7 @@ public class Main {
 		}
 	}
 	
+	@SuppressWarnings("finally")
 	public static int get(Stack<Integer> stack, int i) {
 		try {
 			for (int j =0;j<i-1;j++) {
@@ -89,11 +90,34 @@ public class Main {
 		}
 	}
 	
+	public static int moveToTop(Stack<Integer> stack, int i) {
+		Stack<Integer> iStack = new Stack<Integer>();
+		Stack<Integer> iStack2 = new Stack<Integer>();
+		try {
+			for (int j =0;j<i-1;j++) {
+				iStack2.push(stack.pop());
+			}
+			int elem = stack.peek();
+			iStack.push(stack.pop());
+			while(iStack2.empty()) {
+				iStack.push(iStack2.pop());
+			}
+			while(!stack.empty()) {
+				iStack.push(stack.pop());
+			}
+			stack=iStack;
+			return elem;
+		} finally {
+			return -1;
+		}
+	}
+	
     public static int randInt(int min, int max) {
         Random rand = new Random();
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
     }
+    
     
 	public static LinkedList<Item> greedy(LinkedList<Item> lista, int maxVal) {
 		LinkedList<Item> listPV= new LinkedList<Item>();
